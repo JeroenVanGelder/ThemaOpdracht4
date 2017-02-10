@@ -1,0 +1,46 @@
+#image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+#scherm {
+    display: block;
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 19%;
+    margin-right: 25%;
+    margin-top: 5%;
+    width: 60%;
+    height: 75%;
+    background-color: lightgray;
+}
+#scherm p {
+    font-weight: bold;
+    margin-left: 65%;
+    margin-top: 2%;
+}
+h1.input {
+   position:absolute;
+   
+   left: 450px;
+   
+    
+}
+
+h1 {
+   
+   display: inline-block;
+   text-align: left;
+}
+
+
+input:focus {
+    border: 1px solid #09C;
+    border-radius: 15px;
+}

@@ -1,0 +1,61 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+}
+body {
+    font-family: Merriweather,Georgia,serif;
+    font-size: 110%;
+    background-color: #f1f1f1;
+    letter-spacing: 1px;
+}
+#header {
+    text-align: center;
+    font-size: 40px;
+}
+#hoofdschermdiv {
+    margin-top: 1%;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    background-color: white;
+}
+#divknoppen {
+    font-family: Merriweather,Georgia,serif;
+    letter-spacing: 1px;
+    z-index: 1;
+    font-size: 14px;
+    background-color: lightgray;
+    border: none;
+}
+#divknoppen:hover {
+    background-color: gray;
+    color: white;
+}
+#tablediv {
+    width: 100%;
+    position: relative;    
+}
+#tablediv table {
+    border-collapse: collapse;
+    
+}
+#tablediv tr {
+    text-align: left;
+    width: 100%;
+    
+}
+#tablediv td {
+    width: 40%;   
+}
+#tablediv tr:first-child {
+    background-color: lightsalmon;
+    height: 5%;
+    
+}
+#tablediv td:first-child {
+    padding-left: 3%;
+}
+#tablediv tr {
+    background-color: lightgray;
+}

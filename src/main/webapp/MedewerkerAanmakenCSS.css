@@ -1,0 +1,46 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font-family: Merriweather,Georgia,serif;
+    font-size: 110%;
+    background-color: #f1f1f1;
+    letter-spacing: 1px;
+}
+p {
+    padding-top: 2%;
+    margin-left: 5%;
+}
+p input {
+    margin-right: 25%;
+    float: right;
+}
+p select {
+    float: right;
+    width: 175px;
+    margin-right: 25%;
+}
+#header {
+    text-align: center;
+    font-size: 40px;
+}
+#hoofdschermdiv {
+    margin-top: 1%;
+    width: 30%;
+    height: 70%;
+    margin-left: 35%;
+    background-color: white;
+}
+#registreerdiv {
+    margin-left: 46%;
+}
+#registreerdiv input {
+    width: 175px;
+    height: 40px;
+    border: none;
+}
+#registreerdiv input:hover {
+    background-color: gray;
+    color: white;
+}

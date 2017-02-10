@@ -1,0 +1,49 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font-family: Merriweather,Georgia,serif;
+    font-size: 110%;
+    background-color: #f1f1f1;
+    letter-spacing: 1px;
+}
+p {
+    padding-top: 4%;
+    margin-left: 40%;
+}
+#header {
+    text-align: center;
+    font-size: 40px;
+}
+#hoofdschermdiv {
+    margin-top: 1%;
+    width: 20%;
+    height: 50%;
+    margin-left: 40%;
+    background-color: white;
+}
+input {
+    width: 150px;
+    margin-left: 32%;
+}
+select {
+    width: 150px;
+    margin-left: 32%;
+}
+#loginknop {
+    font-family: Merriweather,Georgia,serif;
+    letter-spacing: 1px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 30px;
+    z-index: 1;
+    width: 150px;
+    font-size: 14px;
+    background-color: lightgray;
+    border: none;
+}
+#loginknop:hover {
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,67 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+}
+body {
+    font-family: Merriweather,Georgia,serif;
+    font-size: 110%;
+    background-color: #f1f1f1;
+    letter-spacing: 1px;
+}
+.header {
+    text-align: center;
+    font-size: 40px;
+}
+.hoofdschermdiv {
+    margin-top: 1%;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    background-color: white;
+}
+.hoofdschermdivcontent {
+    position: absolute;
+    width: 672px;
+    height: 540px;
+    margin-left: 12%;
+}
+.knoppenmenu {
+    background-color: #B0B0B0; 
+    width: 20%;
+    height: 540px;
+}
+.knoppenmenu button {
+    margin-left: 13%;
+}
+.divknoppen {
+    font-family: Merriweather,Georgia,serif;
+    letter-spacing: 1px;
+    margin-top: 15%;
+    height: 40px;
+    z-index: 1;
+    width: 140px;
+    position: relative;
+    font-size: 14px;
+    background-color: lightgray;
+    border: none;
+}
+.divknoppen:hover {
+    background-color: gray;
+    color: white;
+}
+hr {
+    border: 0;
+    height: 0;
+    width: 60%;
+    margin-left: 20%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+

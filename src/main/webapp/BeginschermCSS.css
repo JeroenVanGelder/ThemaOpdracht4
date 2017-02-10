@@ -1,0 +1,76 @@
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+}
+body {
+    font-family: Merriweather,Georgia,serif;
+    font-size: 110%;
+    background-color: #f1f1f1;
+    letter-spacing: 1px;
+}
+#header {
+    text-align: center;
+    font-size: 40px;
+}
+#hoofdschermdiv {
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    background-color: white;
+}
+.divknoppen {
+    font-family: Merriweather,Georgia,serif;
+    letter-spacing: 1px;
+    margin-top: 15%;
+    height: 40px;
+    z-index: 1;
+    width: 140px;
+    position: relative;
+    font-size: 14px;
+    background-color: lightgray;
+    border: none;
+}
+.divknoppen:hover {
+    background-color: gray;
+    color: white;
+}
+ul {
+    position: relative;
+    display: inline-block;
+    font-size: 120%;
+    list-style-type: none;
+}
+li {
+    float: left;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+}
+ul a {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+ul a:hover {
+    background-color: gray;
+    color: white;
+}
+#navbar {
+    background-color: #B0B0B0;
+    height: 5%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+#tekstdiv {
+    padding-top: 1%;
+    padding-left: 3%;
+    width: 50%;
+    position: absolute;
+}
+#inloggendiv {
+    position: absolute;
+    width: 10%;
+    right: 10%;
+}
