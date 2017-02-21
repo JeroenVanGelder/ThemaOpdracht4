@@ -2,18 +2,14 @@ package nl.hu.to4.groep1.controllers;
 import nl.hu.to4.groep1.domain.*;
 
 import java.io.IOException;
-import static java.nio.file.Files.list;
-import static java.rmi.Naming.list;
-import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
-import static java.util.Collections.list;
+
 /**
  *
  * @author Rami
@@ -48,7 +44,7 @@ public class voegArtikelToeServlet extends HttpServlet {
                     
                     if (obj != null) 
                     {
-                        for(Artikel A : bedrijf.getArtikelen())  
+                        for(Artikel A : bedrijf.getVoorraad())
                         {                                
 
                                 rd = request.getRequestDispatcher("voegArtikelToe.jsp");
@@ -88,7 +84,7 @@ public class voegArtikelToeServlet extends HttpServlet {
                     
                     if (obj != null) 
                     {
-                        for(Artikel A : bedrijf.getArtikelen())  
+                        for(Artikel A : bedrijf.getVoorraad())
                         {                                
 
                                 rd = request.getRequestDispatcher("voegArtikelToe.jsp");
@@ -101,7 +97,7 @@ public class voegArtikelToeServlet extends HttpServlet {
                         {
 
                             bedrijf.addArtikel(bs);
-                            System.out.print(bedrijf.getArtikelen());
+                            System.out.print(bedrijf.getVoorraad());
                             getServletContext().setAttribute("bedrijf", bedrijf);
                             bedrijf.schrijfBedrijfWeg();
                             

@@ -50,7 +50,7 @@ private static final long serialVersionUID = 1L;
                 {
                     //hier wordt de weekplanning van het bedrijf adhv de weeknummer naar de request gestuurd
                     Bedrijf b = (Bedrijf)obj;
-                    request.setAttribute("weekPlanning", b.getWeek(weekNummer));
+                    request.setAttribute("weekPlanning", b.getWeekplanningOpWeeknummer(weekNummer));
                     getServletContext().setAttribute("weekPlanningNummer", weekNummer);
                 }
             }
@@ -74,7 +74,7 @@ private static final long serialVersionUID = 1L;
             {
                 //hier wordt de weekplanning van het bedrijf adhv de weeknummer naar de request gestuurd
                 b = (Bedrijf)obj;
-                wP = b.getWeek(weekNummer);
+                wP = b.getWeekplanningOpWeeknummer(weekNummer);
 
                 //de bijhorende klus vinden op basis van de waarde van de knop
                 int i = Integer.parseInt("" + act.charAt(9));

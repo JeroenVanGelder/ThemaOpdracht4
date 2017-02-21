@@ -29,7 +29,7 @@ public class ParkeerPlek implements Serializable{
         return c;
     }
     
-    public boolean getBezet(String s) throws ParseException{
+    public boolean isBezet(String s) throws ParseException{
         Calendar c = StringToDate(s);
         boolean b = false;
         for(ParkeerReservering p : reserveringen)
@@ -46,11 +46,19 @@ public class ParkeerPlek implements Serializable{
     public boolean reserveer(String datum, Klant k) throws ParseException{
         Calendar date = StringToDate(datum);
         boolean b = false;
-        if(!getBezet(datum))
+        if(!isBezet(datum))
         {
             reserveringen.add(new ParkeerReservering(date, k));
             b = true;
         }
         return b;
+    }
+
+    public boolean reserveerAlsDatumVrijIs(String datum, Klant klant) throws ParseException
+    {
+        if (this.isBezet(datum) == false) {
+            reserveer(datum, klant);
+            return true;
+        }
     }
 }

@@ -6,7 +6,6 @@
 package nl.hu.to4.groep1.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +31,10 @@ public class voorraadServlet extends HttpServlet {
              System.out.print("komt die wel");
               Onderdeel schroef = new Onderdeel("schroef", 1.50, "een hele dure schroef." , 10.0);
               bedrijf.addArtikel(schroef);
-              System.out.print(bedrijf.getArtikelen());
+              System.out.print(bedrijf.getVoorraad());
               
               
-            for(Artikel  A  : bedrijf.getArtikelen()){
+            for(Artikel  A  : bedrijf.getVoorraad()){
               
                 request.getSession().setAttribute("ArtikelenLijst", A);
             }

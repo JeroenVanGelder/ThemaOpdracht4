@@ -5,16 +5,11 @@ import nl.hu.to4.groep1.domain.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.ConcurrentModificationException;
-import java.util.List;
-
 
 
 /**
@@ -62,7 +57,7 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                     
                     if (obj != null) 
                     {
-                        for (Werknemer W : bedrijf.getWerknemersRegister()) 
+                        for (Werknemer W : bedrijf.getAlleWerknemers())
                         {                                
                             System.out.println(password2 + password);
                             
@@ -129,7 +124,7 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                     if (obj != null)
                     {
                         
-                       for (Werknemer W : bedrijf.getWerknemersRegister()) 
+                       for (Werknemer W : bedrijf.getAlleWerknemers())
                         {
                               System.out.println(password2 + password);
                              if (W.werknemerBestaat(M))
@@ -144,7 +139,7 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                         getServletContext().setAttribute("bedrijf", bedrijf);
                         bedrijf.schrijfBedrijfWeg();
                         
-                         System.out.print("toegevoegde werknemer" + bedrijf.getWerknemersRegister().get(bedrijf.getWerknemersRegister().size()-1).getNaam());
+                         System.out.print("toegevoegde werknemer" + bedrijf.getAlleWerknemers().get(bedrijf.getAlleWerknemers().size()-1).getNaam());
                         
                         rd = request.getRequestDispatcher("inlogScherm.jsp");
                         rd.forward(request, response);

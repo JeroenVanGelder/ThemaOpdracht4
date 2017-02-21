@@ -4,13 +4,9 @@ import nl.hu.to4.groep1.domain.*;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -100,14 +96,14 @@ public class loginServlet extends HttpServlet
                     System.out.println(functie + " ww check , email check");
                     System.out.println("Gebruiker : " + gebruikersnaam);
                     
-                    for(Werknemer w: bedrijf.getWerknemersRegister()) 
+                    for(Werknemer w: bedrijf.getAlleWerknemers())
                     {
                         System.out.println("k naam : " + w.getNaam());
                         
                         if (w.naamCheck(gebruikersnaam)) 
                         {
                             System.out.println("Gelijke gebruikersnaam | " + w.getNaam() + " | " +  gebruikersnaam);
-                            if (w.login(password)) 
+                            if (w.checkWachtwoord(password))
                             {
                                 System.out.println("Ingelogd == true");
 //                                Cookie cookie = new Cookie("gebruikersnaam", gebruikersnaam);

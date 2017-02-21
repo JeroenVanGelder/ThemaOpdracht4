@@ -24,10 +24,10 @@
            Monteur m2 = new Monteur("Pieter", "Hertoglaan", 23, "Arnhem", "6823 HG", "ATDwebGroep1@gmail.com", "Monteur", 90.0, "pieter", "pieter");
            ParkeerMedewerker pm1 = new ParkeerMedewerker("Jopie", "butjeslaan", 1, "het dorp", "3789 WY", "ATDwebGroep1@gmail.com" , "ParkeerMedewerker", 200, "jopie", "jopie");
 
-            bedrijf.addWerknemer(m1);
-            bedrijf.addWerknemer(m2);
-            bedrijf.addWerknemer(e1);
-            bedrijf.addWerknemer(pm1);
+            bedrijf.addMonteurAlsWerknemer(m1);
+            bedrijf.addMonteurAlsWerknemer(m2);
+            bedrijf.addMonteurAlsWerknemer(e1);
+            bedrijf.addMonteurAlsWerknemer(pm1);
             // dan maak ik voorbeeld klussen aan
            Klant klant1 = new Klant("Jeroen", "Johan de Wittlaan", 178, "Arnhem", "6828 WN", "jeroen", "jeroen");
            Klant klant2 = new Klant("Rami", "Edense straatlaan", 34, "Ede", "1515 EY", "Rami", "Rami");
@@ -83,17 +83,17 @@
            klant9.setAuto(a15);
            klant10.setAuto(a10);
            
-           Klus k1 = new Klus("Total loss", a11, bedrijf.vindEigenaar(a11));
-           Klus k2 = new Klus("Deuk in de zijkant", a14, bedrijf.vindEigenaar(a14));
-           Klus k3 = new Klus("Uitlaat rookt", a6, bedrijf.vindEigenaar(a6));
-           Klus k4 = new Klus("Mist een deur", a4, bedrijf.vindEigenaar(a4));
-           Klus k5 = new Klus("Nieuwe lak nodig", a9, bedrijf.vindEigenaar(a9));
-           Klus k6 = new Klus("APK", a10, bedrijf.vindEigenaar(a10));
-           Klus k7 = new Klus("Ruitenwissers & spiegels", a3, bedrijf.vindEigenaar(a3));
-           Klus k8 = new Klus("Nieuwe spoiler nodig", a8, bedrijf.vindEigenaar(a8));
-           Klus k9 = new Klus("Echt alles", a7, bedrijf.vindEigenaar(a7));
-           Klus k10 = new Klus("Toeter toeterd niet had genoeg", a2, bedrijf.vindEigenaar(a2));
-           Klus k11 = new Klus("Motorkap zit echt veel te stevig", a11, bedrijf.vindEigenaar(a1));
+           Klus k1 = new Klus("Total loss", a11, bedrijf.vindKlantOpAuto(a11));
+           Klus k2 = new Klus("Deuk in de zijkant", a14, bedrijf.vindKlantOpAuto(a14));
+           Klus k3 = new Klus("Uitlaat rookt", a6, bedrijf.vindKlantOpAuto(a6));
+           Klus k4 = new Klus("Mist een deur", a4, bedrijf.vindKlantOpAuto(a4));
+           Klus k5 = new Klus("Nieuwe lak nodig", a9, bedrijf.vindKlantOpAuto(a9));
+           Klus k6 = new Klus("APK", a10, bedrijf.vindKlantOpAuto(a10));
+           Klus k7 = new Klus("Ruitenwissers & spiegels", a3, bedrijf.vindKlantOpAuto(a3));
+           Klus k8 = new Klus("Nieuwe spoiler nodig", a8, bedrijf.vindKlantOpAuto(a8));
+           Klus k9 = new Klus("Echt alles", a7, bedrijf.vindKlantOpAuto(a7));
+           Klus k10 = new Klus("Toeter toeterd niet had genoeg", a2, bedrijf.vindKlantOpAuto(a2));
+           Klus k11 = new Klus("Motorkap zit echt veel te stevig", a11, bedrijf.vindKlantOpAuto(a1));
 
            k1.setMonteur(m1);
            k2.setMonteur(m2);

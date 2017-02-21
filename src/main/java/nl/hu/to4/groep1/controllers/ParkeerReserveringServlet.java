@@ -8,8 +8,6 @@ package nl.hu.to4.groep1.controllers;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -98,7 +96,7 @@ public class ParkeerReserveringServlet extends HttpServlet {
             System.out.println("klantenSelect != null");
             String klant = request.getParameter("klantenSelect");
             String datum = (String) request.getSession().getAttribute("date");
-            Klant k = b.vindKlant(klant);
+            Klant k = b.vindKlantOpNaam(klant);
             System.out.println("opgeslagen waarde : " + klant + " | " + k.getNaam() + " | " + datum);
             try {
                 System.out.println("we gaan de try in");

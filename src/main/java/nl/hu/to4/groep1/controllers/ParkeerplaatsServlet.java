@@ -5,12 +5,8 @@
  */
 package nl.hu.to4.groep1.controllers;
 
-import java.awt.List;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -20,8 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import nl.hu.to4.groep1.domain.Bedrijf;
-import nl.hu.to4.groep1.domain.ParkeerPlek;
-import nl.hu.to4.groep1.domain.ParkeerReservering;
 
 /**
  *
@@ -42,10 +36,10 @@ public class ParkeerplaatsServlet extends HttpServlet {
                 Bedrijf b = (Bedrijf) getServletContext().getAttribute("bedrijf");
                 String date = request.getParameter("date");
                 System.out.println("ParkeerplaatsServlet: datum = " + date);
-                int vP = b.getVrijePlekken(date);
+                int vP = b.getAantalVrijeParkeerplaatsenOpDatum(date);
                 System.out.println("ParkeerplaatsServlet: Vrije Plekken int: " + vP);
                 
-                request.setAttribute("vrijePlekken", b.getVrijePlekken(request.getParameter("date")));
+                request.setAttribute("vrijePlekken", b.getAantalVrijeParkeerplaatsenOpDatum(request.getParameter("date")));
                 System.out.println("ParkeerplaatsServlet: vrijeplekken uit bedrijf gehaald: " + request.getAttribute("vrijePlekken"));
                 request.getSession().setAttribute("date", request.getParameter("date"));
                 rd = request.getRequestDispatcher("ParkeerplaatsReservering.jsp");

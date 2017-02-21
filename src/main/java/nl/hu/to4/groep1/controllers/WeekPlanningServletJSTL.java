@@ -5,12 +5,11 @@
  */
 package nl.hu.to4.groep1.controllers;
 
-import nl.hu.to4.groep1.services.BedrijfService;
 import nl.hu.to4.groep1.domain.Bedrijf;
-import nl.hu.to4.groep1.domain.Klus;
-import nl.hu.to4.groep1.domain.WeekPlanning;
+import nl.hu.to4.groep1.domain.PlanningDatum;
+
 import java.io.IOException;
-import javax.inject.Inject;
+import java.util.Calendar;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,7 +51,7 @@ private static final long serialVersionUID = 1L;
                 {
                     Bedrijf b = (Bedrijf)obj;
                     request.setAttribute("weekNummer", weekNummer);
-                    request.setAttribute("weekPlanning", b.getWeek(weekNummer));
+                    request.setAttribute("weekPlanning", b.getWeekplanningOpWeeknummer(weekNummer));
                 }
             }
         }
@@ -64,11 +63,15 @@ private static final long serialVersionUID = 1L;
             if(obj instanceof Bedrijf)
             {
                 String weekString = request.getParameter("weekNummerHidden");
+                Calendar klusDatum = Calendar.getInstance();
+
                 int week = Integer.parseInt("" + weekString);
                 int dag = Integer.parseInt("" + act.charAt(9));
                 int uur = Integer.parseInt("" + act.charAt(10));
+
                 Bedrijf b = (Bedrijf)obj;
-                request.setAttribute("overzichtKlus", b.getKlus(week, dag, uur));
+                PlanningDatum datum = new PlanningDatum(week, dag, uur);
+                request.setAttribute("overzichtKlus", b.getKlusOpPlanningDatum(datum));
                 returnAdress = "klusOverzichtScherm.jsp";
             }
             

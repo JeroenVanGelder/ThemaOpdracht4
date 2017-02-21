@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 public class Klant implements Serializable{
 
-	private ArrayList<Auto> autos = new ArrayList<Auto>();
+	private ArrayList<Auto> autolijst = new ArrayList<Auto>();
 	private String naam;
 	private String Straatnaam;
 	private int huisnummer;
@@ -30,12 +30,12 @@ public class Klant implements Serializable{
         
         public void setAuto(Auto a)
         {
-            autos.add(a);
+            autolijst.add(a);
         }
         
         public ArrayList<Auto> getAutoLijst()
         {
-            return autos;
+            return autolijst;
         }
         
         public String getNaam()
@@ -46,28 +46,31 @@ public class Klant implements Serializable{
       public String getFunctie(){
         return  Functie ;
     }
-        
-        
-        public boolean login(String pw){
-        boolean b = false;
-        if( inloggegevens.equals(pw)){
-            b = true;
-        }
-        return b;
-    }
-         public boolean userBestaat(Klant k){
-        boolean userBestaat = false;
-          if (naam.equals(k.naam)) {
-                            userBestaat = true;
-                        }
-          return userBestaat;
-    }
 
-    public boolean naamCheck(String nm){
-        boolean n = false;
-        if (this.inlognaam.equals(nm)) {
-            n = true;
+    public Auto vindAutoInAutolijst(String kenteken)
+    {
+        for (Auto auto : autolijst) {
+            if (auto.getKenteken().equals(kenteken)) {
+                return auto;
+            }
         }
-        return n;
+        return null;
     }
+        
+        
+        public boolean login(String pw)
+        {
+        return inloggegevens.equals(pw);
+        }
+
+         public boolean userBestaat(Klant k)
+         {
+            return naam.equals(k.naam);
+         }
+
+        public boolean naamCheck(String nm)
+        {
+            return this.inlognaam.equals(nm);
+        }
+
 }

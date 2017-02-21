@@ -99,7 +99,7 @@ private static final long serialVersionUID = 1L;
                         int i = (int)getServletContext().getAttribute("weekPlanningNummer");
                         String inplanDatum = (String)getServletContext().getAttribute("inplanDatum");
                         
-                        bedrijf.getWeek(i).setBehandelDatum(k, Integer.parseInt("" + inplanDatum.charAt(9)), Integer.parseInt("" + inplanDatum.charAt(10)));
+                        bedrijf.getWeekplanningOpWeeknummer(i).setBehandelDatum(k, Integer.parseInt("" + inplanDatum.charAt(9)), Integer.parseInt("" + inplanDatum.charAt(10)));
                         
                     }
                     // naar bedrijf in de servlet uploaden

@@ -30,4 +30,9 @@ public class WeekPlanning implements Serializable{
             return klussen;
         }
 
+        public Klus getKlussenOpPlanningDatum(PlanningDatum datum)
+        {
+            return klussen[datum.getDagInDeWeek()][datum.getUurOpDeDag()];
+        }
+
 }

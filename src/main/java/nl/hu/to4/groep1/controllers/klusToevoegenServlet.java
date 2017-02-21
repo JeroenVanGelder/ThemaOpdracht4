@@ -5,12 +5,10 @@
  */
 package nl.hu.to4.groep1.controllers;
 
-import nl.hu.to4.groep1.services.BedrijfService;
 import nl.hu.to4.groep1.domain.Bedrijf;
 import nl.hu.to4.groep1.domain.Klus;
-import nl.hu.to4.groep1.domain.WeekPlanning;
+
 import java.io.IOException;
-import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,10 +52,10 @@ private static final long serialVersionUID = 1L;
             Auto auto = b.vindAuto(autoKenteken);
             System.out.println("de auto " + auto.getKenteken() + " bestaat");
             
-            if(b.vindEigenaar(auto).getNaam().equals(klant))
+            if(b.vindKlantOpAuto(auto).getNaam().equals(klant))
             {
                 System.out.println("De auto is van " + klant);
-                Klant klant1 = b.vindKlant(klant, auto);
+                Klant klant1 = b.vindKlantOpNaamEnAuto(klant, auto);
                 Klus k = new Klus(omschrijving, auto, klant1);
                 System.out.println("De Klus is aangemaakt");
                 returnAdress = "weekPlanningJSTL.jsp";

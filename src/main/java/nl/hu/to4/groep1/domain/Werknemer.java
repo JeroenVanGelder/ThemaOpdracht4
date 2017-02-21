@@ -33,7 +33,7 @@ public abstract class Werknemer implements Serializable{
         this.inlognaam = inlognaam;
         this.wachtwoord = wachtwoord;
     }
-    public boolean login(String pw){
+    public boolean checkWachtwoord(String pw){
         boolean b = false;
         if( wachtwoord.equals(wachtwoord)){
             b = true;

@@ -59,6 +59,22 @@ public class Monteur extends Werknemer implements Serializable{
             }
             return obj;
         }
+
+        public boolean planKlus(Klus k, int weekNummer, int dag, int aantalUur)
+        {
+            boolean returnBoolean = false;
+            for (int werkUren = 0; werkUren < 8; werkUren++) {
+                if (this.checkBeschikbaarheid(dag, werkUren) == true) {
+                    this.addKlus(k, weekNummer, dag, werkUren);
+                    aantalUur--;
+                }
+                if (aantalUur == 0) {
+                    werkUren = 8;
+                    returnBoolean = true;
+                }
+            }
+            return returnBoolean;
+        }
         
         public void addWeekPlanning(WeekPlanning wp, int i)
         {
