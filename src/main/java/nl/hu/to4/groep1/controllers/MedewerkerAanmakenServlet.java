@@ -47,11 +47,11 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                    
                 if (gebruikersnaam != null && realname != null && password != null && email != null && StraatNaam != null && Huisnummer >=0 && woonplaats != null && postcode != null) {
 
-                   ParkeerMedewerker pm = new ParkeerMedewerker (realname , StraatNaam , Huisnummer , woonplaats , postcode , email ,functie , uurloon,gebruikersnaam , password);  
+                   ParkeerMedewerker pm = Werknemer.createParkeerMedewerker(realname, StraatNaam, Huisnummer, woonplaats, postcode, email, functie, uurloon, gebruikersnaam, password);
                     Object obj = getServletContext().getAttribute("bedrijf");
                     Bedrijf bedrijf = (Bedrijf)obj ;
                     
-                   ParkeerMedewerker r = new ParkeerMedewerker ("q","q",1,"q","q","q","Parkeermedewerker",1,"q","q");
+                   ParkeerMedewerker r = Werknemer.createParkeerMedewerker("q", "q", 1, "q", "q", "q", "Parkeermedewerker", 1, "q", "q");
                     
                      
                     
@@ -117,7 +117,7 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                 if (gebruikersnaam != null && realname != null && password != null && functie != null && email != null && StraatNaam != null && Huisnummer >=0 && woonplaats != null && postcode != null) 
                 {
                      
-                    Monteur M = new Monteur (realname , StraatNaam , Huisnummer , woonplaats , postcode , email ,functie , uurloon,gebruikersnaam , password);
+                    Monteur M = Werknemer.createMonteur(realname, new Adres(StraatNaam, Huisnummer, woonplaats, postcode), email, functie, uurloon, gebruikersnaam, password);
                     Object obj = getServletContext().getAttribute("bedrijf");
                     Bedrijf bedrijf = (Bedrijf)obj ;
                     

@@ -6,18 +6,19 @@
 package nl.hu.to4.groep1.services;
 
 import nl.hu.to4.groep1.domain.Bedrijf;
+import nl.hu.to4.groep1.modelServices.Service;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 
 /**
  *
  * @author Jeroen
  */
 @Stateless
-public class BedrijfService implements Service<Bedrijf, String>{
+public class BedrijfService implements Service<Bedrijf, String> {
     
     @Override
     public void create(Bedrijf entity) {

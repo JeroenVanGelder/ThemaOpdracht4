@@ -11,7 +11,7 @@ public class ParkeerReservering extends Dienst implements Serializable{
     private Factuur deFactuur;
 
     public ParkeerReservering(Calendar datum, Klant klant) {
-	this.datum = datum;
+	    this.datum = datum;
         this.klant = klant;
         deFactuur = new Factuur(klant, this);
     }

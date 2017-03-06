@@ -33,6 +33,19 @@ public abstract class Werknemer implements Serializable{
         this.inlognaam = inlognaam;
         this.wachtwoord = wachtwoord;
     }
+
+    public static Eigenaar createEigenaar(String naam, String straatnaam, int huisnummer, String woonplaats, String postcode, String email, String functie, double uurloon, String inlognaam, String wachtwoord) {
+        return new Eigenaar(naam, straatnaam, huisnummer, woonplaats, postcode, email, functie, uurloon, inlognaam, wachtwoord);
+    }
+
+    public static Monteur createMonteur(String naam, Adres adres, String email, String functie, double uurloon, String inlognaam, String wachtwoord) {
+        return new Monteur(naam, adres, email, functie, uurloon, inlognaam, wachtwoord);
+    }
+
+    public static ParkeerMedewerker createParkeerMedewerker(String naam, String straatnaam, int huisnummer, String woonplaats, String postcode, String email, String functie, double uurloon, String inlognaam, String wachtwoord) {
+        return new ParkeerMedewerker(naam, straatnaam, huisnummer, woonplaats, postcode, email, functie, uurloon, inlognaam, wachtwoord);
+    }
+
     public boolean checkWachtwoord(String pw){
         boolean b = false;
         if( wachtwoord.equals(wachtwoord)){

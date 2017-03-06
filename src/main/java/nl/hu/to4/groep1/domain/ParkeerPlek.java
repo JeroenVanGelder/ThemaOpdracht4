@@ -60,5 +60,7 @@ public class ParkeerPlek implements Serializable{
             reserveer(datum, klant);
             return true;
         }
+        return false;
     }
+
 }

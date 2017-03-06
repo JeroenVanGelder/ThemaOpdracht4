@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public abstract class Artikel implements Serializable{
-  private int artikelId;
+    public static final double BTW = 0.21;
+    private int artikelId;
     private String naam;
     private double prijs;
     private double aantal;
@@ -43,6 +44,7 @@ public abstract class Artikel implements Serializable{
     }
  
     public double getPrijs() {
+        prijs = prijs * (1+BTW);
         return prijs;
     }
      

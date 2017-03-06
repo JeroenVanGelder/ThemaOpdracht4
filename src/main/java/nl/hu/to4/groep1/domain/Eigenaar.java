@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Eigenaar extends Werknemer implements Serializable{
 
         
-        public Eigenaar(String naam, String straatnaam, int huisnummer, String woonplaats, String postcode, String email, String functie, double uurloon , String inlognaam , String wachtwoord)
+        Eigenaar(String naam, String straatnaam, int huisnummer, String woonplaats, String postcode, String email, String functie, double uurloon, String inlognaam, String wachtwoord)
         {
             super(naam, straatnaam, huisnummer, woonplaats, postcode, email, functie, uurloon,inlognaam , wachtwoord);
         }

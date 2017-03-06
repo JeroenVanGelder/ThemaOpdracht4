@@ -8,9 +8,9 @@ public class Monteur extends Werknemer implements Serializable{
 	private boolean beschikbaarheid[][];
         private WeekPlanning[] weekPlanning;
         
-	public Monteur(String naam, String straatnaam, int huisnummer, String woonplaats, String postcode, String email, String functie, double uurloon, String inlognaam , String wachtwoord)
+	Monteur(String naam, Adres adres, String email, String functie, double uurloon, String inlognaam, String wachtwoord)
         {
-            super(naam, straatnaam, huisnummer, woonplaats, postcode, email, functie, uurloon, inlognaam, wachtwoord);
+            super(naam, adres.getStraatnaam(), adres.getHuisnummer(), adres.getWoonplaats(), adres.getPostcode(), email, functie, uurloon, inlognaam, wachtwoord);
             weekPlanning = new WeekPlanning[54];
         }
         public void setBeschikbaarheid(boolean[][] besch)
@@ -49,13 +49,13 @@ public class Monteur extends Werknemer implements Serializable{
             }
             return geslaagd;
         }
-        public WeekPlanning getWeekPlanning(int i)
+        public WeekPlanning getWeekPlanningOpWeeknummer(int weekNummer)
         {
             System.out.println("check : " + this.weekPlanning.length);
             WeekPlanning obj = null;
             if(weekPlanning != null)
             {
-               obj = weekPlanning[i];
+               obj = weekPlanning[weekNummer];
             }
             return obj;
         }

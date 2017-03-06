@@ -39,11 +39,9 @@ public class Klus extends Dienst implements Serializable{
         
         public String getBeschrijving()
         {
-            if(beschrijving != null)
-            {
-                return beschrijving;
-            }
-            return "";
+
+            return "" + beschrijving;
+
         }
 
 	public void voegArtikel(Artikel artikel, int aantal) {
@@ -68,6 +66,11 @@ public class Klus extends Dienst implements Serializable{
         public Auto getAuto()
         {
             return deAuto;
+        }
+
+        public String getAutoKenteken()
+        {
+            return deAuto.getKenteken();
         }
         
         public Factuur getFactuur()

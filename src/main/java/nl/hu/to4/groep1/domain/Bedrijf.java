@@ -68,10 +68,17 @@ public class Bedrijf implements Serializable {
     public Klant vindKlantOpNaam(String naam) {
         Klant klant = null;
         for (Klant k : klantenRegister) {
-            if (naam.equals(k.getNaam()))
-                klant = k;
+            klant = checkOvereenkomstTussenNaamEnKlant(naam, k);
         }
         return klant;
+    }
+
+    private static Klant checkOvereenkomstTussenNaamEnKlant(String naam, Klant klant) {
+        Klant returnKlant = null;
+        if (naam.equals(klant.getNaam())){
+            klant = klant;
+        }
+        return returnKlant;
     }
 
     public Klant vindKlantOpAuto(Auto auto) {
@@ -149,6 +156,7 @@ public class Bedrijf implements Serializable {
         for (Klant klant : klantenRegister) {
             return klant.vindAutoInAutolijst(kenteken);
         }
+        return null;
     }
 
     public boolean klusInplannen(Klus k, int weekNummer, int dag, int aantalUur) {

@@ -96,7 +96,7 @@ public class voegArtikelToeServlet extends HttpServlet {
                         if(!b) 
                         {
 
-                            bedrijf.addArtikel(bs);
+                            bedrijf.addArtikel(bs.getArtikel());
                             System.out.print(bedrijf.getVoorraad());
                             getServletContext().setAttribute("bedrijf", bedrijf);
                             bedrijf.schrijfBedrijfWeg();

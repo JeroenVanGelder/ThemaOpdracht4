@@ -19,10 +19,10 @@
            // eerst maak ik een weekplanning aan
            WeekPlanning weekplanning = new WeekPlanning(0);
            // dan maak ik 2 monteuren aan
-           Monteur m1 = new Monteur("Jan", "Jansplein", 44, "Arnhem", "6782 HU", "ATDwebGroep1@gmail.com", "Monteur", 100.0, "jan", "jan");
-           Eigenaar e1 = new Eigenaar("Henk", "Paladein", 44, "Henklaan", "6782 HE", "Henk@gmail.com", "Eigenaar", 1.0, "henk", "henk");
-           Monteur m2 = new Monteur("Pieter", "Hertoglaan", 23, "Arnhem", "6823 HG", "ATDwebGroep1@gmail.com", "Monteur", 90.0, "pieter", "pieter");
-           ParkeerMedewerker pm1 = new ParkeerMedewerker("Jopie", "butjeslaan", 1, "het dorp", "3789 WY", "ATDwebGroep1@gmail.com" , "ParkeerMedewerker", 200, "jopie", "jopie");
+           Monteur m1 = Werknemer.createMonteur("Jan", new Adres("Jansplein", 44, "Arnhem", "6782 HU"), "ATDwebGroep1@gmail.com", "Monteur", 100.0, "jan", "jan");
+           Eigenaar e1 = Werknemer.createEigenaar("Henk", "Paladein", 44, "Henklaan", "6782 HE", "Henk@gmail.com", "Eigenaar", 1.0, "henk", "henk");
+           Monteur m2 = Werknemer.createMonteur("Pieter", new Adres("Hertoglaan", 23, "Arnhem", "6823 HG"), "ATDwebGroep1@gmail.com", "Monteur", 90.0, "pieter", "pieter");
+           ParkeerMedewerker pm1 = Werknemer.createParkeerMedewerker("Jopie", "butjeslaan", 1, "het dorp", "3789 WY", "ATDwebGroep1@gmail.com", "ParkeerMedewerker", 200, "jopie", "jopie");
 
             bedrijf.addMonteurAlsWerknemer(m1);
             bedrijf.addMonteurAlsWerknemer(m2);
@@ -51,21 +51,21 @@
            bedrijf.voegKlantToe(klant9);
            bedrijf.voegKlantToe(klant10);
            
-           Auto a1 = new Auto("AE-36-UE", c);
-           Auto a2 = new Auto("YS-92-ME", c);
-           Auto a3 = new Auto("AU-37-DU", c);
-           Auto a4 = new Auto("MR-27-DJ", c);
-           Auto a5 = new Auto("VC-83-EH", c);
-           Auto a6 = new Auto("EH-37-DG", c);
-           Auto a7 = new Auto("DH-16-HG", c);
-           Auto a8 = new Auto("JE-00-KK", c);
-           Auto a9 = new Auto("AU-28-UK", c);
-           Auto a10 = new Auto("QM-94-ME", c);
-           Auto a11 = new Auto("FY-72-HH", c);
-           Auto a12 = new Auto("YY-47-EY", c);
-           Auto a13 = new Auto("UE-93-ME", c);
-           Auto a14 = new Auto("RM-27-DU", c);
-           Auto a15 = new Auto("CV-83-GH", c);
+           Auto a1 = new AutoBuilder().setKenteken("AE-36-UE").setLaatsteOnderhoud(c).createAuto();
+           Auto a2 = new AutoBuilder().setKenteken("YS-92-ME").setLaatsteOnderhoud(c).createAuto();
+           Auto a3 = new AutoBuilder().setKenteken("AU-37-DU").setLaatsteOnderhoud(c).createAuto();
+           Auto a4 = new AutoBuilder().setKenteken("MR-27-DJ").setLaatsteOnderhoud(c).createAuto();
+           Auto a5 = new AutoBuilder().setKenteken("VC-83-EH").setLaatsteOnderhoud(c).createAuto();
+           Auto a6 = new AutoBuilder().setKenteken("EH-37-DG").setLaatsteOnderhoud(c).createAuto();
+           Auto a7 = new AutoBuilder().setKenteken("DH-16-HG").setLaatsteOnderhoud(c).createAuto();
+           Auto a8 = new AutoBuilder().setKenteken("JE-00-KK").setLaatsteOnderhoud(c).createAuto();
+           Auto a9 = new AutoBuilder().setKenteken("AU-28-UK").setLaatsteOnderhoud(c).createAuto();
+           Auto a10 = new AutoBuilder().setKenteken("QM-94-ME").setLaatsteOnderhoud(c).createAuto();
+           Auto a11 = new AutoBuilder().setKenteken("FY-72-HH").setLaatsteOnderhoud(c).createAuto();
+           Auto a12 = new AutoBuilder().setKenteken("YY-47-EY").setLaatsteOnderhoud(c).createAuto();
+           Auto a13 = new AutoBuilder().setKenteken("UE-93-ME").setLaatsteOnderhoud(c).createAuto();
+           Auto a14 = new AutoBuilder().setKenteken("RM-27-DU").setLaatsteOnderhoud(c).createAuto();
+           Auto a15 = new AutoBuilder().setKenteken("CV-83-GH").setLaatsteOnderhoud(c).createAuto();
            
            klant1.setAuto(a1);
            klant1.setAuto(a11);

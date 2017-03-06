@@ -8,11 +8,26 @@ public class Auto implements Serializable{
 
 	private String kenteken;
 	private Calendar laatsteOnderhoud;
+    private String model;
+    private boolean heeftSpoiler;
+    private boolean heeftVerfbeurt;
 
 	public Auto(String kenteken , Calendar laatsteOnderhoud){
 		this.kenteken = kenteken;
 		this.laatsteOnderhoud = laatsteOnderhoud;
+        model = null;
+        heeftSpoiler = false;
+        heeftVerfbeurt = false;
 	}
+
+    public Auto(String kenteken , Calendar laatsteOnderhoud, String model, boolean heeftSpoiler, boolean heeftVerfbeurt)
+    {
+        this.kenteken = kenteken;
+        this.laatsteOnderhoud = laatsteOnderhoud;
+        this.model = model;
+        this.heeftSpoiler = heeftSpoiler;
+        this.heeftVerfbeurt = heeftVerfbeurt;
+    }
 
 	public Calendar localDateToCalendar(int month, int i) {
         LocalDate d = null;

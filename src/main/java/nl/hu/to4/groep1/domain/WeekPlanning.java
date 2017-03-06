@@ -35,4 +35,9 @@ public class WeekPlanning implements Serializable{
             return klussen[datum.getDagInDeWeek()][datum.getUurOpDeDag()];
         }
 
+    public String getAutoKentekenUitKlusOpDatum(PlanningDatum datum)
+    {
+        return klussen[datum.getDagInDeWeek()][datum.getUurOpDeDag()].getAuto().getKenteken();
+    }
+
 }

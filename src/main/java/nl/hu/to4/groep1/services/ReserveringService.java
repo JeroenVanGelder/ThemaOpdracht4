@@ -5,12 +5,10 @@
  */
 package nl.hu.to4.groep1.services;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import javax.ejb.Stateless;
-import nl.hu.to4.groep1.domain.Bedrijf;
+
 import nl.hu.to4.groep1.domain.ParkeerReservering;
+import nl.hu.to4.groep1.modelServices.Service;
 
 /**
  *
