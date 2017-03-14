@@ -27,7 +27,7 @@ public class loginServlet extends HttpServlet
     protected synchronized void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         
-        RequestDispatcher rd = null;
+        RequestDispatcher rd;
         String msg2 = null;
         String gebruikersnaam = request.getParameter("gebruikersnaam");
         String password = request.getParameter("wachtwoord");
