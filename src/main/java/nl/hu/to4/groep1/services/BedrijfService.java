@@ -35,6 +35,7 @@ public class BedrijfService implements Service<Bedrijf, String> {
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object obj = ois.readObject();
             bedrijf = (Bedrijf)obj;
+            ois.close();
         }
         catch(IOException io)
         {
