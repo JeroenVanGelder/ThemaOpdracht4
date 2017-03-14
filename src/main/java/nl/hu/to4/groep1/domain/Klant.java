@@ -51,7 +51,7 @@ public class Klant implements Serializable{
     {
         for (Auto auto : autolijst) {
             if (auto.getKenteken().equals(kenteken)) {
-                return auto.;
+                return auto;
             }
         }
         return null;

@@ -49,7 +49,7 @@ private static final long serialVersionUID = 1L;
             String omschrijving = request.getParameter("omschrijving");
             System.out.println("de volgende waarde zijn opgeslagen : " + klant + " | " + autoKenteken + " | " + omschrijving + " |");
             
-            Auto auto = b.vindAuto(autoKenteken);
+            Auto auto = b.vindAutoOpKenteken(autoKenteken);
             System.out.println("de auto " + auto.getKenteken() + " bestaat");
             
             if(b.vindKlantOpAuto(auto).getNaam().equals(klant))
