@@ -45,7 +45,7 @@ public class MedewerkerAanmakenServlet extends HttpServlet {
                  
             if (password.equals(password2) && email.equals(email2)) {
                    
-                if (gebruikersnaam != "" && realname != "" && password != "" && email != "" && StraatNaam != "" && Huisnummer >=0 && woonplaats != "" && postcode != "") {
+                if (gebruikersnaam != null && realname != null && password != null && email != null && StraatNaam != null && Huisnummer >=0 && woonplaats != null && postcode != null) {
 
                    ParkeerMedewerker pm = Werknemer.createParkeerMedewerker(realname, StraatNaam, Huisnummer, woonplaats, postcode, email, functie, uurloon, gebruikersnaam, password);
                     Object obj = getServletContext().getAttribute("bedrijf");
